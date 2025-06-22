@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crypto Wallet</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="wallet-container">
+    <h1>ETH Crypto Wallet</h1>
+
+    <!-- Wallet Generation Section -->
+    <div class="wallet-section">
+      <button id="generateWallet">Generate Wallet</button>
+      <p><strong>Address:</strong> <span id="walletAddress">Not Generated</span></p>
+      <p><strong>Private Key:</strong> <span id="privateKey">Not Generated</span></p>
+    </div>
+
+    <!-- Balance Check Section -->
+    <div class="balance-section">
+      <button id="checkBalance">Check Balance</button>
+      <p><strong>Balance:</strong> <span id="walletBalance">0 ETH</span></p>
+    </div>
+
+    <!-- Receive Section -->
+    <div class="receive-section">
+      <h3>Receive ETH</h3>
+      <button id="generateQR">Generate QR Code</button>
+      <div id="qrcode"></div>
+      <button id="copyAddress">Copy Address</button>
+      <p id="copyStatus"></p>
+    </div>
+
+    <!-- Transaction Section -->
+    <div class="transaction-section">
+      <h3>Send ETH</h3>
+      <label for="toAddress">To Address:</label>
+      <input type="text" id="toAddress" placeholder="Recipient Address">
+      <label for="amount">Amount (ETH):</label>
+      <input type="text" id="amount" placeholder="0.01">
+      <button id="sendTransaction">Send</button>
+      <p><strong>Transaction Status:</strong> <span id="txStatus">Not Sent</span></p>
+    </div>
+  </div>
+
+  <!-- External Libraries -->
+  <script src="qrcode.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.umd.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
